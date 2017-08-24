@@ -16,5 +16,6 @@ CREATE TABLE merchants (
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
   merchant_id INT REFERENCES merchants(id),
-  value INT CHECK (value > 0)
+  value INT CHECK (value > 0),
+  date_time TIMESTAMP
 );
