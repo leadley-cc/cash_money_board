@@ -3,7 +3,7 @@ require "pg"
 class SqlRunner
   def SqlRunner.run(sql, values = [])
     begin
-      db = PG.connect({ dbname: "codeclan_cinema", host: "localhost" })
+      db = PG.connect({ dbname: "cash_money_board", host: "localhost" })
       if values.empty?
         pg_result = db.exec(sql)
       else
