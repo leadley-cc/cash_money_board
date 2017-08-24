@@ -1,9 +1,12 @@
 require "pg"
 
 class SqlRunner
+  @@dbname = "cash_money_board"
+  @@host = "localhost"
+
   def SqlRunner.run(sql, values = [])
     begin
-      db = PG.connect({ dbname: "cash_money_board", host: "localhost" })
+      db = PG.connect({ dbname: @@dbname, host: @@host })
       if values.empty?
         pg_result = db.exec(sql)
       else
@@ -13,6 +16,6 @@ class SqlRunner
     ensure
       db.close if db
     end
-    return pg_result ||= []
+    return pg_result
   end
 end
