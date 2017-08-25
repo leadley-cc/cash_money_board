@@ -12,4 +12,8 @@ class Tag
     @id = params["id"].to_i if params["id"]
     @name = params["name"]
   end
+
+  def merchants
+    Merchant.select("tag_id", @id)
+  end
 end

@@ -1,4 +1,5 @@
 require_relative "model"
+require_relative "transaction"
 
 class User
   include Model
@@ -26,6 +27,6 @@ class User
 
   private
   def spend
-    # TODO: Implement a @spent variable and 
+    # TODO: Implement a @spent variable and
   end
 end
