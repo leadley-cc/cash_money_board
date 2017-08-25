@@ -73,7 +73,6 @@ module Model
   end
 
   def save_query
-    puts "Saving!"
     columns_no = self.class.columns.count
     sql = "
       INSERT INTO #{self.class.table}
@@ -87,7 +86,6 @@ module Model
   end
 
   def update_query
-    puts "Updating!"
     columns_no = self.class.columns.count
     sql = "
       UPDATE #{self.class.table}

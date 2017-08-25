@@ -23,4 +23,9 @@ class User
   def transactions
     Transaction.select("user_id", @id)
   end
+
+  private
+  def spend
+    # TODO: Implement a @spent variable and 
+  end
 end
