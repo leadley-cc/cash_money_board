@@ -32,6 +32,7 @@ module Model
     def find(id)
       sql = "SELECT * FROM #{self.table} WHERE id = $1"
       result = SqlRunner.run(sql, [id])
+      return nil if result.to_a.empty?
       return self.new(result.first)
     end
   end
