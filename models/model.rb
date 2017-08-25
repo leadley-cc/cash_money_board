@@ -28,6 +28,12 @@ module Model
     def map_create(hashes)
       return hashes.map {|hash| self.new(hash)}
     end
+
+    def find(id)
+      sql = "SELECT * FROM #{self.table} WHERE id = $1"
+      result = SqlRunner.run(sql, [id])
+      return self.new(result.first)
+    end
   end
 
   def set_instance_variables(options)
