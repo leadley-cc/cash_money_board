@@ -6,7 +6,10 @@ class Tag
   @table = "tags"
   @columns = ["name"]
 
+  attr_accessor :name
+
   def initialize(params)
-    set_instance_variables(params)
+    @id = params["id"].to_i if params["id"]
+    @name = params["name"]
   end
 end

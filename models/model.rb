@@ -2,8 +2,7 @@ require_relative "../db/sql_runner"
 
 module Model
   # @table and @columns are required for including Model
-  # Any column named in @columns is given an attr_accessor
-  # The id SERIAL PRIMARY KEY column is implicitly dealt with
+  # @id is assumed and shouldn't be included
 
   def self.included(included)
     included.class_eval do
@@ -37,16 +36,8 @@ module Model
     end
   end
 
-  def set_instance_variables(options)
-    self.class.columns.each do |column|
-      instance_variable_set("@#{column}", options[column])
-      self.class.class_eval { attr_accessor column }
-    end
-    instance_variable_set("@id", options["id"]) unless @id
-  end
-
   def save
-    @id ? update_query : save_query
+    @id.nil? ? save_query : update_query
   end
 
   def delete

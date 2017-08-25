@@ -7,8 +7,12 @@ class Merchant
   @table = "merchants"
   @columns = ["name", "tag_id"]
 
+  attr_accessor :name, :tag_id
+
   def initialize(params)
-    set_instance_variables(params)
+    @id = params["id"].to_i if params["id"]
+    @name = params["name"]
+    @tag_id = params["tag_id"].to_i
   end
 
   def tag
