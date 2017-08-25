@@ -22,5 +22,6 @@ class User
 
   def transactions
     # TODO: return array of user's transactions
+    Transaction.select("user_id", @id)
   end
 end

@@ -34,6 +34,13 @@ module Model
       return nil if result.to_a.empty?
       return self.new(result.first)
     end
+
+    def select(column, value)
+      sql = "SELECT * FROM #{self.table} WHERE #{column} = $1"
+      result = SqlRunner.run(sql, [value])
+      return nil if result.to_a.empty?
+      return self.map_create(result)
+    end
   end
 
   def save
