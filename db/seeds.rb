@@ -7,6 +7,14 @@ require_relative "../models/transaction"
 Transaction.delete_all
 Merchant.delete_all
 Tag.delete_all
+User.delete_all
+
+michael = User.new({
+  "first_name" => "Michael",
+  "last_name" => "Leadley",
+  "budget_cap" => 20000
+})
+michael.save
 
 supermarket = Tag.new({"name" => "Supermarket"})
 supermarket.save
@@ -23,12 +31,11 @@ sains = Merchant.new({
 })
 sains.save
 
-tran1 = Transaction.new({
+michael.new_transaction({
   "value" => 2500,
   "date_time" => Time.now,
   "merchant_id" => sains.id
 })
-tran1.save
 
 binding.pry
 nil
