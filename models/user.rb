@@ -16,6 +16,10 @@ class User
     @budget_cap = params["budget_cap"].to_i
   end
 
+  def budget_cap_present
+    '£' << @budget_cap.to_s.insert(-3,'.')
+  end
+
   def new_transaction(params)
     params["user_id"] = @id
     Transaction.new(params).save
@@ -27,6 +31,6 @@ class User
 
   private
   def spend
-    # TODO: Implement a @spent variable and
+    # TODO: Implement a @spent variable and method to add to it
   end
 end

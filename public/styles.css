@@ -1,0 +1,34 @@
+body {
+  font-family: "Avenir Next", sans-serif;
+  color: #55557f;
+  background-color: #f6f6ff;
+}
+
+.content {
+  width: 720px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.user-details {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #e5e5ff;
+  border: 1px solid #55557f;
+  border-radius: 3px;
+}
+
+.user-details .cell {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #55557f;
+}
+
+.field-name {
+  display: inline-block;
+  width: 35%;
+}
