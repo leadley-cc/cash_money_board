@@ -26,6 +26,11 @@ h1, h2 {
   padding: 20px;
   box-sizing: border-box;
   border: 1px solid #55557f;
+  transition: all .15s ease-in;
+}
+
+.user-details .cell:hover {
+  background-color: #eeeeff;
 }
 
 .field-name {
