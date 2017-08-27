@@ -16,6 +16,13 @@ michael = User.new({
 })
 michael.save
 
+sandra = User.new({
+  "first_name" => "Sandra",
+  "last_name" => "Jabłońska",
+  "budget_cap" => 30000
+})
+sandra.save
+
 supermarket = Tag.new({"name" => "Supermarket"})
 supermarket.save
 

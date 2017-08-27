@@ -13,6 +13,68 @@ h1, h2 {
   text-align: center;
 }
 
+h1 {
+  margin-bottom: 0px;
+}
+
+#title-link {
+  font-weight: bold;
+  color: #55557f;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav a {
+  display: block;
+  padding: 20px;
+  color: #55557f;
+  text-decoration: none;
+}
+
+.user-index {
+  display: flex;
+  flex-direction: column;
+  background-color: #e5e5ff;
+  border: 2px solid #55557f;
+  border-radius: 10px;
+}
+
+.user-index a {
+  color: #55557f;
+  text-decoration: none;
+}
+
+.user-index .cell {
+  font-size: 200%;
+  text-align: center;
+  padding: 30px 0px;
+  transition: all .15s ease-in;
+  border-bottom: 2px solid #55557f;
+}
+
+.user-index .cell:hover {
+  background-color: #eeeeff;
+}
+
+.user-index a:first-child .cell {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.user-index a:last-child .cell {
+  border-radius: 0px 0px 10px 10px;
+  border-bottom: none;
+}
+
+.user-index a:only-child .cell {
+  border-radius: 10px;
+  border-bottom: none;
+}
+
 .user-details {
   display: flex;
   flex-flow: row wrap;

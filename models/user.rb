@@ -16,6 +16,10 @@ class User
     @budget_cap = params["budget_cap"].to_i
   end
 
+  def full_name
+    @first_name + " " + @last_name
+  end
+
   def budget_cap_present
     '£' << @budget_cap.to_s.insert(-3,'.')
   end
