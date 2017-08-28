@@ -9,6 +9,11 @@ get '/users/:user_id/transactions' do
   erb(:transaction_index)
 end
 
+get '/transactions' do
+  @transactions = Transaction.all
+  erb(:transaction_index)
+end
+
 get '/transactions/:id' do
   @transaction = Transaction.find(params[:id])
   erb(:transaction_show)

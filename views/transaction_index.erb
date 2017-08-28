@@ -1,8 +1,8 @@
-<h2>All Transactions for <%= @user.full_name %></h2>
+<h2>All Transactions<%= @user ? " for " + @user.full_name : "" %></h2>
 <table class="transaction-index">
   <thead>
     <tr>
-      <th>ID</th>
+      <!-- <th>ID</th> -->
       <th>Date</th>
       <th>Time</th>
       <th>Value</th>
@@ -16,9 +16,9 @@
     <% merchant = transaction.merchant %>
     <% tag = merchant.tag %>
     <tr class="row">
-      <td class="cell">
+      <!-- <td class="cell">
         <%= transaction.id %>
-      </td>
+      </td> -->
       <td class="cell">
         <%= transaction.print_date %>
       </td>
