@@ -19,7 +19,9 @@ get '/transactions/user/:user_id' do
 end
 
 get '/transactions/new(/:user_id)?' do
-  @user_id = params[:user_id]
+  @users = User.all
+  @merchants = Merchant.all
+  @user_id = params[:user_id].to_i if params[:user_id]
   erb(:transaction_new)
 end
 
