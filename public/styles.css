@@ -84,7 +84,6 @@ nav a {
 }
 
 .user-details .cell {
-  width: 50%;
   padding: 20px;
   box-sizing: border-box;
   border: 1px solid #55557f;
@@ -95,7 +94,21 @@ nav a {
   background-color: #eeeeff;
 }
 
+.cell-50 {
+  width: 50%;
+}
+
+.cell-100 {
+  width: 100%;
+}
+
 .field-name {
   display: inline-block;
   width: 35%;
+}
+
+#transactions-link {
+  color: #55557f;
+  text-decoration: none;
+  text-align: center;
 }

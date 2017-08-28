@@ -1,19 +1,22 @@
 <h2>User #<%= @user.id %></h2>
 <div class="user-details">
-  <div class="cell">
+  <div class="cell cell-50">
     <span class="field-name">First name:</span>
     <%= @user.first_name %>
   </div>
-  <div class="cell">
+  <div class="cell cell-50">
     <span class="field-name">Last name:</span>
     <%= @user.last_name %>
   </div>
-  <div class="cell">
+  <div class="cell cell-50">
     <span class="field-name">Budget Cap:</span>
     <%= @user.budget_cap_present %>
   </div>
-  <div class="cell">
+  <div class="cell cell-50">
     <span class="field-name">Spent:</span>
     <!-- @user.spent -->
   </div>
+  <a class="cell cell-100" id="transactions-link" href="/users/<%= @user.id %>/transactions">
+    See Transactions
+  </a>
 </div>
