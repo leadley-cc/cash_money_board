@@ -60,7 +60,7 @@ nav a:hover {
 .user-chooser .cell {
   font-size: 200%;
   text-align: center;
-  padding: 30px 0px;
+  padding: 20px 0px;
   transition: all .15s ease-in;
   border-bottom: 2px solid #55557f;
 }

@@ -33,6 +33,10 @@ class User
     Transaction.select("user_id", @id)
   end
 
+  def transaction_count
+    Transaction.count("user_id", @id)
+  end
+
   private
   def spend
     # TODO: Implement a @spent variable and method to add to it
