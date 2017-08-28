@@ -14,9 +14,17 @@ class Transaction
   def initialize(params)
     @id = params["id"].to_i if params["id"]
     @value = params["value"].to_i
-    @date_time = params["date_time"] # This comes back as a Time object
+    @date_time = Time.parse(params["date_time"])
     @user_id = params["user_id"].to_i
     @merchant_id = params["merchant_id"].to_i
+  end
+
+  def print_date
+    @date_time.strftime("%a %d %b %y")
+  end
+
+  def print_time
+    @date_time.strftime("%k:%M:%S")
   end
 
   def user
