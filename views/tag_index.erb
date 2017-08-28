@@ -1,0 +1,33 @@
+<h2>All Tags</h2>
+<table class="transaction-index">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th># of Merchants</th>
+      <th># of Transactions</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @tags.each do |tag| %>
+    <tr class="row">
+      <td class="cell">
+        <%= tag.id %>
+      </td>
+      <td class="cell">
+        <%= tag.name %>
+      </td>
+      <td class="cell">
+        <%= tag.merchant_count %>
+      </td>
+      <td class="cell">
+        <%= tag.transaction_count %>
+      </td>
+      <td class="cell">
+        <a href="/tags/<%= tag.id %>">Show</a>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
