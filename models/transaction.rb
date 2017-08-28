@@ -27,6 +27,10 @@ class Transaction
     @date_time.strftime("%k:%M:%S")
   end
 
+  def print_value
+    '£' << @value.to_s.insert(-3,'.')
+  end
+
   def user
     User.find(@user_id)
   end
