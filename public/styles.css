@@ -102,12 +102,24 @@ nav a:hover {
   background-color: #eeeeff;
 }
 
+.user-details .cell-50 a {
+  transition: all .15s ease-in;
+  border-bottom: 1px solid transparent;
+}
+
+.user-details .cell-50 a:hover {
+  border-bottom: 1px solid #55557f;
+}
+
 .cell-50 {
   width: 50%;
 }
 
 .cell-100 {
   width: 100%;
+}
+
+a.cell-100 {
   text-align: center;
 }
 
@@ -168,4 +180,13 @@ table, tr, th, td {
 .transaction-index td, .transaction-index th {
   padding: 10px;
   text-align: center;
+}
+
+.transaction-index tbody a {
+  transition: all .15s ease-in;
+  border-bottom: 1px solid transparent;
+}
+
+.transaction-index tbody a:hover {
+  border-bottom: 1px solid #55557f;
 }
