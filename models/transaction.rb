@@ -18,7 +18,7 @@ class Transaction
     @user_id = params["user_id"].to_i
     @merchant_id = params["merchant_id"].to_i
     @date_time = params["date_time"]
-    @date_time = Time.parse(@date_time) if @date_time.is_a?(String)
+    process_date_time
   end
 
   def print_date
@@ -53,5 +53,15 @@ class Transaction
     "
     result = SqlRunner.run(sql, [@merchant_id])
     Tag.new(result.first)
+  end
+
+  private
+  def process_date_time
+    return nil unless @date_time.is_a?(String)
+    if @date_time.empty?
+      @date_time = Time.now
+    else
+      @date_time = Time.parse(@date_time)
+    end
   end
 end
