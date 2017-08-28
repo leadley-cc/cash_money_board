@@ -33,7 +33,7 @@
   <form action="/transactions/<%= @transaction.id %>/delete" method="POST" id="delete-form">
     <input type="hidden" value="Delete Transaction">
   </form>
-  <a class="cell cell-100" href="#" onclick="document.getElementById('delete-form').submit();">
+  <a class="cell cell-100 delete-button" href="#" onclick="document.getElementById('delete-form').submit();">
     Delete Transaction
   </a>
 </div>

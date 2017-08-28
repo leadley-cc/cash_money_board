@@ -19,4 +19,13 @@
   <a class="cell cell-100" id="transactions-link" href="/users/<%= @user.id %>/transactions">
     See Transactions
   </a>
+  <a class="cell cell-100" href="/users/<%= @user.id %>/edit">
+    Edit User
+  </a>
+  <form action="/users/<%= @user.id %>/delete" method="POST" id="delete-form">
+    <input type="hidden" value="Delete User">
+  </form>
+  <a class="cell cell-100 delete-button" href="#" onclick="document.getElementById('delete-form').submit();">
+    Delete User
+  </a>
 </div>
