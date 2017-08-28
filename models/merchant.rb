@@ -18,4 +18,8 @@ class Merchant
   def tag
     Tag.find(@tag_id)
   end
+
+  def transaction_count
+    Transaction.count("merchant_id", @id)
+  end
 end

@@ -41,6 +41,17 @@ module Model
       return nil if result.to_a.empty?
       return self.map_create(result)
     end
+
+    def count(column = nil, value = nil)
+      sql = "SELECT COUNT(*) FROM #{self.table}"
+      values = []
+      if column && value
+        sql << " WHERE #{column} = $1"
+        values << value
+      end
+      result = SqlRunner.run(sql, values)
+      return result.first["count"]
+    end
   end
 
   def save
