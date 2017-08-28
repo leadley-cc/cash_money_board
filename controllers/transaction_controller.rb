@@ -4,7 +4,7 @@ require_relative "../models/transaction"
 
 get '/transactions' do
   @transactions = Transaction.all
-  @transactions.sort_by! {|transaction| transaction.date_time}
+  @transactions.sort_by! {|transaction| transaction.date_time} if @transactions
   erb(:transaction_index)
 end
 
@@ -16,7 +16,7 @@ end
 get '/transactions/user/:user_id' do
   @user = User.find(params[:user_id])
   @transactions = Transaction.select("user_id", params[:user_id])
-  @transactions.sort_by! {|transaction| transaction.date_time}
+  @transactions.sort_by! {|transaction| transaction.date_time} if @transactions
   erb(:transaction_index)
 end
 
