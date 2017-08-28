@@ -1,0 +1,39 @@
+<h2>Transaction #<%= @transaction.id %></h2>
+<% user = @transaction.user %>
+<% merchant = @transaction.merchant %>
+<% tag = merchant.tag %>
+<div class="user-details">
+  <div class="cell cell-50">
+    <span class="field-name">User:</span>
+    <a href="/users/<%= user.id %>"><%= user.full_name %></a>
+  </div>
+  <div class="cell cell-50">
+    <span class="field-name">Value:</span>
+    <%= @transaction.value %>
+  </div>
+  <div class="cell cell-50">
+    <span class="field-name">Date:</span>
+    <%= @transaction.print_date %>
+  </div>
+  <div class="cell cell-50">
+    <span class="field-name">Time:</span>
+    <%= @transaction.print_time %>
+  </div>
+  <div class="cell cell-50">
+    <span class="field-name">Merchant:</span>
+    <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
+  </div>
+  <div class="cell cell-50">
+    <span class="field-name">Tag:</span>
+    <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+  </div>
+  <a class="cell cell-100" href="/transactions/<%= @transaction.id %>/edit">
+    Edit Transaction
+  </a>
+  <form action="/transactions/<%= @transaction.id %>/delete" method="POST" id="delete-form">
+    <input type="hidden" value="Delete Transaction">
+  </form>
+  <a class="cell cell-100" href="#" onclick="document.getElementById('delete-form').submit();">
+    Delete Transaction
+  </a>
+</div>

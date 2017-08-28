@@ -4,8 +4,8 @@ require "sinatra/contrib/all"
 require_relative "../models/transaction"
 
 get '/users/:user_id/transactions' do
-  @user_id = params[:user_id]
-  @transactions = Transaction.select("user_id", @user_id)
+  @user = User.find(params[:user_id])
+  @transactions = Transaction.select("user_id", params[:user_id])
   erb(:transaction_index)
 end
 

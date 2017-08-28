@@ -108,17 +108,12 @@ nav a:hover {
 
 .cell-100 {
   width: 100%;
+  text-align: center;
 }
 
 .field-name {
   display: inline-block;
   width: 35%;
-}
-
-#transactions-link {
-  color: #55557f;
-  text-decoration: none;
-  text-align: center;
 }
 
 table, tr, th, td {
