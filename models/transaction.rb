@@ -33,6 +33,10 @@ class Transaction
     '£' << @value.to_s.insert(-3,'.')
   end
 
+  def html_date_time
+    @date_time.strftime("%FT%k:%M")
+  end
+
   def user
     User.find(@user_id)
   end

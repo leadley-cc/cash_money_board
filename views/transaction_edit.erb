@@ -1,0 +1,30 @@
+<h2>New Transaction</h2>
+<form id="edit-transaction" action="/transactions/<%= @transaction.id %>" method="post">
+  <label for="user-select">User:</label>
+  <select id="user-select" name="user_id">
+    <% @users.each do |user| %>
+      <option value="<%= user.id %>"
+        <%= "selected" if user.id == @transaction.user_id %> >
+        <%= user.full_name %>
+      </option>
+    <% end %>
+  </select>
+
+  <label for="value">Value:</label>
+  <input type="number" value="<%= @transaction.value %>" id="value" name="value">
+
+  <label for="datetime">Date/time:</label>
+  <input type="datetime-local" value="<%= @transaction.html_date_time %>" id="datetime" name="date_time">
+
+  <label for="merchant-select">Merchant:</label>
+  <select id="merchant-select" name="merchant_id">
+    <% @merchants.each do |merchant| %>
+      <option value="<%= merchant.id %>"
+        <%= "selected" if merchant.id == @transaction.merchant_id %> >
+        <%= merchant.name %>
+      </option>
+    <% end %>
+  </select>
+
+  <input type="submit" name="update" value="Update Transaction">
+</form>
