@@ -9,12 +9,19 @@ body {
   margin: 0 auto;
 }
 
-h1, h2 {
+h1 {
   text-align: center;
+  margin-bottom: 0px;
 }
 
-h1 {
-  margin-bottom: 0px;
+h2 {
+  text-align: center;
+  margin-top: 0px;
+}
+
+a {
+  color: #55557f;
+  text-decoration: none;
 }
 
 #title-link {
@@ -27,13 +34,19 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 10px 0px;
 }
 
 nav a {
   display: block;
-  padding: 20px;
-  color: #55557f;
-  text-decoration: none;
+  padding: 10px 15px;
+  margin: 0px 5px;
+  transition: all .15s ease-in;
+  border-radius: 3px;
+}
+
+nav a:hover {
+  background-color: #eeeeff;
 }
 
 .user-index {
@@ -41,12 +54,7 @@ nav a {
   flex-direction: column;
   background-color: #e5e5ff;
   border: 2px solid #55557f;
-  border-radius: 10px;
-}
-
-.user-index a {
-  color: #55557f;
-  text-decoration: none;
+  border-radius: 3px;
 }
 
 .user-index .cell {
@@ -62,16 +70,16 @@ nav a {
 }
 
 .user-index a:first-child .cell {
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
 }
 
 .user-index a:last-child .cell {
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 0px 0px 3px 3px;
   border-bottom: none;
 }
 
 .user-index a:only-child .cell {
-  border-radius: 10px;
+  border-radius: 3px;
   border-bottom: none;
 }
 
@@ -111,4 +119,35 @@ nav a {
   color: #55557f;
   text-decoration: none;
   text-align: center;
+}
+
+.transaction-index {
+  display: flex;
+  flex-direction: column;
+  background-color: #e5e5ff;
+  border: 2px solid #55557f;
+  border-radius: 3px;
+}
+
+.transaction-index .row {
+  transition: all .15s ease-in;
+  border-bottom: 2px solid #55557f;
+}
+
+.transaction-index .row:hover {
+  background-color: #eeeeff;
+}
+
+.transaction-index .row:first-child {
+  border-radius: 3px 3px 0px 0px;
+}
+
+.transaction-index .row:last-child {
+  border-radius: 0px 0px 3px 3px;
+  border-bottom: none;
+}
+
+.transaction-index .row:only-child {
+  border-radius: 3px;
+  border-bottom: none;
 }
