@@ -18,7 +18,8 @@ get '/transactions/user/:user_id' do
   erb(:transaction_index)
 end
 
-get '/transactions/new' do
+get '/transactions/new(/:user_id)?' do
+  @user_id = params[:user_id]
   erb(:transaction_new)
 end
 

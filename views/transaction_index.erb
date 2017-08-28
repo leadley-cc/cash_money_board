@@ -1,4 +1,4 @@
-<h2>All Transactions</h2>
+<h2>All Transactions<%= @user ? " for " + @user.full_name : "" %></h2>
 <table class="transaction-index">
   <thead>
     <tr>
@@ -40,4 +40,13 @@
     </tr>
   <% end if @transactions %>
   </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="6">
+        <a href="/transactions/new<%= @user ? '/' + @user.id.to_s : '' %>">
+          New Transaction
+        </a>
+      </td>
+    </tr>
+  </tfoot>
 </table>

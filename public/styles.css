@@ -177,7 +177,7 @@ table, tr, th, td {
   background-color: #eeeeff;
 }
 
-.transaction-index td, .transaction-index th {
+.transaction-index tbody td, .transaction-index th {
   padding: 10px;
   text-align: center;
 }
@@ -189,4 +189,20 @@ table, tr, th, td {
 
 .transaction-index tbody a:hover {
   border-bottom: 1px solid #55557f;
+}
+
+.transaction-index tfoot td {
+  border-top: 2px solid #55557f;
+}
+
+.transaction-index tfoot td a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  transition: all .15s ease-in;
+  border-radius: 0px 0px 3px 3px;
+}
+
+.transaction-index tfoot td a:hover {
+  background-color: #eeeeff;
 }
