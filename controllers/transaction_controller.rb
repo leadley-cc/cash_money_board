@@ -1,10 +1,11 @@
 require "sinatra"
 require "sinatra/contrib/all"
-require_relative "../models/user"
+# require_relative "../models/user"
 require_relative "../models/transaction"
 
 get '/users/:user_id/transactions' do
-  @transactions = Transaction.select("user_id", params[:user_id])
+  @user_id = params[:user_id]
+  @transactions = Transaction.select("user_id", @user_id)
   erb(:transaction_index)
 end
 

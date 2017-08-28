@@ -121,33 +121,52 @@ nav a:hover {
   text-align: center;
 }
 
+table, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-spacing: 0;
+    outline: 0;
+    font-size: 100%;
+}
+
 .transaction-index {
-  display: flex;
-  flex-direction: column;
   background-color: #e5e5ff;
   border: 2px solid #55557f;
   border-radius: 3px;
+  width: 100%;
 }
 
-.transaction-index .row {
-  transition: all .15s ease-in;
+.transaction-index thead th {
+  background-color: #eeeeff;
   border-bottom: 2px solid #55557f;
 }
 
-.transaction-index .row:hover {
+.transaction-index thead th:first-child {
+  border-radius: 3px 0px 0px 0px;
+}
+
+.transaction-index thead th:last-child {
+  border-radius: 0px 3px 0px 0px;
+}
+
+.transaction-index tbody tr {
+  transition: all .15s ease-in;
+}
+
+.transaction-index tbody tr:last-child {
+  border-radius: 0px 0px 3px 3px;
+}
+
+.transaction-index tbody tr:nth-child(even) {
+  background-color: #ddddff;
+}
+
+.transaction-index tbody tr:hover {
   background-color: #eeeeff;
 }
 
-.transaction-index .row:first-child {
-  border-radius: 3px 3px 0px 0px;
-}
-
-.transaction-index .row:last-child {
-  border-radius: 0px 0px 3px 3px;
-  border-bottom: none;
-}
-
-.transaction-index .row:only-child {
-  border-radius: 3px;
-  border-bottom: none;
+.transaction-index td, .transaction-index th {
+  padding: 10px;
+  text-align: center;
 }

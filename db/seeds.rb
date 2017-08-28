@@ -23,6 +23,13 @@ sandra = User.new({
 })
 sandra.save
 
+jim = User.new({
+  "first_name" => "Jimothy",
+  "last_name" => "Bobble",
+  "budget_cap" => 1000
+})
+jim.save
+
 supermarket = Tag.new({"name" => "Supermarket"})
 supermarket.save
 
@@ -40,6 +47,18 @@ sains.save
 
 michael.new_transaction({
   "value" => 2500,
+  "date_time" => Time.now,
+  "merchant_id" => sains.id
+})
+
+michael.new_transaction({
+  "value" => 1500,
+  "date_time" => Time.now,
+  "merchant_id" => tesco.id
+})
+
+michael.new_transaction({
+  "value" => 500,
   "date_time" => Time.now,
   "merchant_id" => sains.id
 })
