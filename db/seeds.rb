@@ -33,6 +33,9 @@ jim.save
 supermarket = Tag.new({"name" => "Supermarket"})
 supermarket.save
 
+food_drink = Tag.new({"name" => "Food & Drink"})
+food_drink.save
+
 tesco = Merchant.new({
   "name" => "Tesco",
   "tag_id" => supermarket.id
@@ -44,6 +47,12 @@ sains = Merchant.new({
   "tag_id" => supermarket.id
 })
 sains.save
+
+chanter = Merchant.new({
+  "name" => "The Chanter",
+  "tag_id" => food_drink.id
+})
+chanter.save
 
 michael.new_transaction({
   "value" => 2500,
@@ -59,6 +68,18 @@ michael.new_transaction({
 
 michael.new_transaction({
   "value" => 500,
+  "date_time" => Time.now,
+  "merchant_id" => sains.id
+})
+
+michael.new_transaction({
+  "value" => 300,
+  "date_time" => Time.now,
+  "merchant_id" => chanter.id
+})
+
+jim.new_transaction({
+  "value" => 235,
   "date_time" => Time.now,
   "merchant_id" => sains.id
 })

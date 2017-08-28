@@ -1,3 +1,4 @@
+require "time"
 require_relative "model"
 require_relative "user"
 require_relative "merchant"
@@ -14,9 +15,10 @@ class Transaction
   def initialize(params)
     @id = params["id"].to_i if params["id"]
     @value = params["value"].to_i
-    @date_time = Time.parse(params["date_time"])
     @user_id = params["user_id"].to_i
     @merchant_id = params["merchant_id"].to_i
+    @date_time = params["date_time"]
+    @date_time = Time.parse(@date_time) if @date_time.is_a?(String)
   end
 
   def print_date
