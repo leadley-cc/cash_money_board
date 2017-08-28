@@ -1,4 +1,4 @@
-<h2>User #<%= @user.id %></h2>
+<h2>User Details</h2>
 <div class="user-details">
   <div class="cell cell-50">
     <span class="field-name">First name:</span>
@@ -16,7 +16,7 @@
     <span class="field-name">Spent:</span>
     <!-- @user.spent -->
   </div>
-  <a class="cell cell-100" id="transactions-link" href="/users/<%= @user.id %>/transactions">
+  <a class="cell cell-100" href="/transactions/user/<%= @user.id %>">
     See Transactions
   </a>
   <a class="cell cell-100" href="/users/<%= @user.id %>/edit">

@@ -1,7 +1,7 @@
-<h2>All Users</h2>
-<div class="user-index">
+<h2>Choose a User</h2>
+<div class="user-chooser">
   <% @users.each do |user| %>
-    <a href="/users/<%= user.id %>">
+    <a href="/transactions/user/<%= user.id %>">
       <div class="cell">
         <%= user.full_name %>
       </div>
