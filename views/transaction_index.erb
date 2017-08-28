@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-  <% @transactions.each do |transaction| %>
+  <% if @transactions then @transactions.each do |transaction| %>
     <% merchant = transaction.merchant %>
     <% tag = merchant.tag %>
     <tr class="row">
@@ -38,7 +38,13 @@
         <a href="/transactions/<%= transaction.id %>">Show</a>
       </td>
     </tr>
-  <% end if @transactions %>
+  <% end else %>
+    <tr>
+      <td colspan="6">
+        No transactions to show!
+      </td>
+    </tr>
+  <% end %>
   </tbody>
   <tfoot>
     <tr>
