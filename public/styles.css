@@ -174,51 +174,6 @@ hr {
   background-color: #eeeeff;
 }
 
-.user-details {
-  display: flex;
-  flex-flow: row wrap;
-  background-color: #e5e5ff;
-  border: 1px solid #55557f;
-  border-radius: 3px;
-}
-
-.user-details .cell {
-  padding: 20px;
-  box-sizing: border-box;
-  border: 1px solid #55557f;
-  transition: all .15s ease-in-out;
-}
-
-.user-details .cell:hover {
-  background-color: #eeeeff;
-}
-
-.user-details .cell-50 a {
-  transition: all .15s ease-in-out;
-  border-bottom: 1px solid transparent;
-}
-
-.user-details .cell-50 a:hover {
-  border-bottom: 1px solid #55557f;
-}
-
-.cell-50 {
-  width: 50%;
-}
-
-.cell-100 {
-  width: 100%;
-}
-
-a.cell-100 {
-  text-align: center;
-}
-
-.field-name {
-  display: inline-block;
-  width: 35%;
-}
-
 .delete-button:hover {
   color: red;
   background-color: #ffe5e5 !important;
@@ -284,11 +239,6 @@ table, tr, th, td {
   padding: 10px;
   margin: -10px;
   transition: all .15s ease-in-out;
-  /*border-bottom: 1px solid transparent;*/
-}
-
-.index-table tbody a:hover {
-  /*border-bottom: 1px solid #55557f;*/
 }
 
 .index-table tfoot td {
