@@ -25,7 +25,9 @@
         <%= tag.transaction_count %>
       </td>
       <td class="cell">
-        <a href="/tags/<%= tag.id %>/edit">Edit</a>
+        <a href="/tags/<%= tag.id %>/edit"><span class="hover-underline">
+          Edit
+        </span></a>
       </td>
     </tr>
   <% end if @tags %>
@@ -33,9 +35,9 @@
   <tfoot>
     <tr>
       <td colspan="5">
-        <a href="/tags/new">
+        <a href="/tags/new"><span class="hover-underline">
           New Tag
-        </a>
+        </span></a>
       </td>
     </tr>
   </tfoot>

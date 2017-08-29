@@ -29,13 +29,17 @@
         <%= transaction.print_value %>
       </td>
       <td class="cell">
-        <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
+        <a href="/merchants/<%= merchant.id %>"><span class="hover-underline">
+          <%= merchant.name %>
+        </span></a>
       </td>
       <td class="cell">
-        <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+        <a href="/tags/<%= tag.id %>"><span class="hover-underline">
+          <%= tag.name %>
+        </span></a>
       </td>
       <td class="cell">
-        <a href="/transactions/<%= transaction.id %>">Show</a>
+        <a href="/transactions/<%= transaction.id %>"><span class="hover-underline">Show</span></a>
       </td>
     </tr>
   <% end else %>
@@ -50,7 +54,7 @@
     <tr>
       <td colspan="6">
         <a href="/transactions/new<%= @user ? '/' + @user.id.to_s : '' %>">
-          New Transaction
+          <span class="hover-underline">New Transaction</span>
         </a>
       </td>
     </tr>

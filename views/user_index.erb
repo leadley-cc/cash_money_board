@@ -29,7 +29,9 @@
         <%= user.transaction_count %>
       </td>
       <td class="cell">
-        <a href="/users/<%= user.id %>">Show</a>
+        <a href="/users/<%= user.id %>"><span class="hover-underline">
+          Show
+        </span></a>
       </td>
     </tr>
   <% end if @users %>
@@ -37,9 +39,9 @@
   <tfoot>
     <tr>
       <td colspan="6">
-        <a href="/users/new">
+        <a href="/users/new"><span class="hover-underline">
           New User
-        </a>
+        </span></a>
       </td>
     </tr>
   </tfoot>

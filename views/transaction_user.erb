@@ -2,9 +2,9 @@
 <div class="user-chooser">
   <% @users.each do |user| %>
     <a href="/transactions/user/<%= user.id %>">
-      <div class="cell">
+      <div class="cell"><span class="hover-underline">
         <%= user.full_name %>
-      </div>
+      <span></div>
     </a>
   <% end %>
 </div>

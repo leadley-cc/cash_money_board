@@ -12,7 +12,8 @@ body {
 
 h1 {
   text-align: center;
-  margin-bottom: 0px;
+  margin: 0px;
+  padding-top: 20px;
 }
 
 h2 {
@@ -37,6 +38,15 @@ a {
 
 #title-link:hover {
   background-color: #eeeeff;
+}
+
+span.hover-underline {
+  transition: all .15s ease-in;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover span.hover-underline {
+  border-bottom: 1px solid #55557f;
 }
 
 nav {
@@ -67,14 +77,18 @@ nav a:hover {
 }
 
 .user-chooser .cell {
-  font-size: 200%;
+  font-size: 150%;
   text-align: center;
   padding: 20px 0px;
   transition: all .15s ease-in;
-  border-bottom: 2px solid #55557f;
+  /*border-bottom: 2px solid #55557f;*/
 }
 
-.user-chooser .cell:hover {
+.user-chooser a:nth-child(even) .cell {
+  background-color: #ddddff;
+}
+
+.user-chooser a .cell:hover {
   background-color: #eeeeff;
 }
 
@@ -192,12 +206,16 @@ table, tr, th, td {
 }
 
 .transaction-index tbody a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  margin: -10px;
   transition: all .15s ease-in;
-  border-bottom: 1px solid transparent;
+  /*border-bottom: 1px solid transparent;*/
 }
 
 .transaction-index tbody a:hover {
-  border-bottom: 1px solid #55557f;
+  /*border-bottom: 1px solid #55557f;*/
 }
 
 .transaction-index tfoot td {

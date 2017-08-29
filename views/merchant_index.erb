@@ -20,13 +20,15 @@
         <%= merchant.name %>
       </td>
       <td class="cell">
-        <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+        <a href="/tags/<%= tag.id %>"><span class="hover-underline">
+          <%= tag.name %>
+        </span></a>
       </td>
       <td class="cell">
         <%= merchant.transaction_count %>
       </td>
       <td class="cell">
-        <a href="/merchants/<%= merchant.id %>/edit">Edit</a>
+        <a href="/merchants/<%= merchant.id %>/edit"><span class="hover-underline">Edit</span></a>
       </td>
     </tr>
   <% end if @merchants %>
@@ -34,9 +36,9 @@
   <tfoot>
     <tr>
       <td colspan="5">
-        <a href="/merchants/new">
+        <a href="/merchants/new"><span class="hover-underline">
           New Merchant
-        </a>
+        </span></a>
       </td>
     </tr>
   </tfoot>
