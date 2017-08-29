@@ -1,0 +1,34 @@
+<h2>Tag #<%= @tag.id %></h2>
+<div class="show">
+  <table class="show-details">
+    <tr>
+      <th>Name</th>
+      <td><%= @tag.name %></td>
+    </tr>
+    <tr>
+      <th>Merchants</th>
+      <td><%= @tag.merchant_count %></td>
+    </tr>
+    <tr>
+      <th>Transactions</th>
+      <td><%= @tag.transaction_count %></td>
+    </tr>
+  </table>
+  <div class="show-buttons">
+    <a href="#">
+      <span class="hover-underline">See Merchants</span>
+    </a>
+    <a href="#">
+      <span class="hover-underline">See Transactions</span>
+    </a>
+    <a href="/tags/<%= @tag.id %>/edit">
+      <span class="hover-underline">Edit Tag</span>
+    </a>
+    <form action="/tags/<%= @tag.id %>/delete" method="POST" id="delete-form">
+      <input type="hidden" value="Delete Tag">
+    </form>
+    <a class="delete-button" href="#" onclick="document.getElementById('delete-form').submit();">
+      Delete Tag
+    </a>
+  </div>
+</div>

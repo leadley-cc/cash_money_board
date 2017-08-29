@@ -18,7 +18,8 @@ get '/tags/:id/edit/?' do
 end
 
 get '/tags/:id/?' do
-  redirect to "/tags/#{params["id"]}/edit"
+  @tag = Tag.find(params["id"])
+  erb(:tag_show)
 end
 
 post '/tags/?' do
