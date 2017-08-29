@@ -1,31 +1,39 @@
 <h2>User Details</h2>
-<div class="user-details">
-  <div class="cell cell-50">
-    <span class="field-name">First name:</span>
-    <%= @user.first_name %>
+<div class="show">
+  <table class="show-details">
+    <tr>
+      <th>First name:</th>
+      <td><%= @user.first_name %></td>
+    </tr>
+    <tr>
+      <th>Last name:</th>
+      <td><%= @user.last_name %></td>
+    </tr>
+    <tr>
+      <th>Budget Cap:</th>
+      <td><%= @user.budget_cap_present %></td>
+    </tr>
+    <tr>
+      <th>Spent:</th>
+      <td><!-- @user.spent_present --></td>
+    </tr>
+    <tr>
+      <th>Budget Left:</th>
+      <td><!-- @user.budget_left_present --></td>
+    </tr>
+  </table>
+  <div class="show-buttons">
+    <a href="/transactions/user/<%= @user.id %>">
+      <span class="hover-underline">See Transactions</span>
+    </a>
+    <a href="/users/<%= @user.id %>/edit">
+      <span class="hover-underline">Edit User</span>
+    </a>
+    <form action="/users/<%= @user.id %>/delete" method="POST" id="delete-form">
+      <input type="hidden" value="Delete User">
+    </form>
+    <a class="delete-button" href="#" onclick="document.getElementById('delete-form').submit();">
+      Delete User
+    </a>
   </div>
-  <div class="cell cell-50">
-    <span class="field-name">Last name:</span>
-    <%= @user.last_name %>
-  </div>
-  <div class="cell cell-50">
-    <span class="field-name">Budget Cap:</span>
-    <%= @user.budget_cap_present %>
-  </div>
-  <div class="cell cell-50">
-    <span class="field-name">Spent:</span>
-    <!-- @user.spent -->
-  </div>
-  <a class="cell cell-100" href="/transactions/user/<%= @user.id %>">
-    See Transactions
-  </a>
-  <a class="cell cell-100" href="/users/<%= @user.id %>/edit">
-    Edit User
-  </a>
-  <form action="/users/<%= @user.id %>/delete" method="POST" id="delete-form">
-    <input type="hidden" value="Delete User">
-  </form>
-  <a class="cell cell-100 delete-button" href="#" onclick="document.getElementById('delete-form').submit();">
-    Delete User
-  </a>
 </div>

@@ -33,7 +33,7 @@ a {
   color: #55557f;
   text-decoration: none;
   border-radius: 3px;
-  transition: all .15s ease-in;
+  transition: all .15s ease-in-out;
 }
 
 #title-link:hover {
@@ -41,7 +41,7 @@ a {
 }
 
 span.hover-underline {
-  transition: all .15s ease-in;
+  transition: all .15s ease-in-out;
   border-bottom: 1px solid transparent;
 }
 
@@ -60,12 +60,18 @@ nav a {
   display: block;
   padding: 10px 15px;
   margin: 0px 5px;
-  transition: all .15s ease-in;
+  transition: all .15s ease-in-out;
   border-radius: 3px;
 }
 
 nav a:hover {
   background-color: #eeeeff;
+}
+
+hr {
+  margin: 0.25em 0;
+  border: none;
+  border-top: 1px solid #55557f;
 }
 
 .user-chooser {
@@ -80,7 +86,7 @@ nav a:hover {
   font-size: 150%;
   text-align: center;
   padding: 20px 0px;
-  transition: all .15s ease-in;
+  transition: all .15s ease-in-out;
   /*border-bottom: 2px solid #55557f;*/
 }
 
@@ -106,6 +112,61 @@ nav a:hover {
   border-bottom: none;
 }
 
+.show {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 10px;
+}
+
+.show-details {
+  width: 330px;
+  border: 2px solid #55557f;
+  border-radius: 3px;
+  background-color: #e5e5ff;
+}
+
+.show-details th {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: right;
+  background-color: #eeeeff;
+  border-right: 1px solid #55557f;
+}
+
+.show-details td {
+  width: 50%;
+  box-sizing: border-box;
+  border-left: 1px solid #55557f;
+  padding: 10px;
+  transition: all .15s ease-in-out;
+  text-align: left;
+}
+
+.show-details td:hover {
+  background-color: #eeeeff;
+}
+
+.show-buttons {
+  width: 330px;
+}
+
+.show-buttons a {
+  margin-bottom: 20px;
+  display: block;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px solid #55557f;
+  border-radius: 3px;
+  background-color: #e5e5ff;
+  transition: all .15s ease-in-out;
+}
+
+.show-buttons a:hover {
+  background-color: #eeeeff;
+}
+
 .user-details {
   display: flex;
   flex-flow: row wrap;
@@ -118,7 +179,7 @@ nav a:hover {
   padding: 20px;
   box-sizing: border-box;
   border: 1px solid #55557f;
-  transition: all .15s ease-in;
+  transition: all .15s ease-in-out;
 }
 
 .user-details .cell:hover {
@@ -126,7 +187,7 @@ nav a:hover {
 }
 
 .user-details .cell-50 a {
-  transition: all .15s ease-in;
+  transition: all .15s ease-in-out;
   border-bottom: 1px solid transparent;
 }
 
@@ -153,6 +214,11 @@ a.cell-100 {
 
 .delete-button:hover {
   color: red;
+  background-color: #ffe5e5 !important;
+}
+
+.delete-button:hover .hover-underline {
+  border-bottom: 1px solid red;
 }
 
 table, tr, th, td {
@@ -185,7 +251,7 @@ table, tr, th, td {
 }
 
 .index-table tbody tr {
-  transition: all .15s ease-in;
+  transition: all .15s ease-in-out;
 }
 
 .index-table tbody tr:last-child {
@@ -210,7 +276,7 @@ table, tr, th, td {
   width: 100%;
   padding: 10px;
   margin: -10px;
-  transition: all .15s ease-in;
+  transition: all .15s ease-in-out;
   /*border-bottom: 1px solid transparent;*/
 }
 
@@ -226,7 +292,7 @@ table, tr, th, td {
   display: block;
   padding: 10px;
   text-align: center;
-  transition: all .15s ease-in;
+  transition: all .15s ease-in-out;
   border-radius: 0px 0px 3px 3px;
 }
 
