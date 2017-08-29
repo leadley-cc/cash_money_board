@@ -2,38 +2,48 @@
 <% user = @transaction.user %>
 <% merchant = @transaction.merchant %>
 <% tag = merchant.tag %>
-<div class="user-details">
-  <div class="cell cell-50">
-    <span class="field-name">User:</span>
-    <a href="/users/<%= user.id %>"><%= user.full_name %></a>
+<div class="show">
+  <table class="show-details">
+    <tr>
+      <th>User</th>
+      <td><a href="/users/<%= user.id %>">
+        <span class="hover-underline"><%= user.full_name %></span>
+      </a></td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <td><%= @transaction.print_value %></td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <td><%= @transaction.print_date %></td>
+    </tr>
+    <tr>
+      <th>Time</th>
+      <td><%= @transaction.print_time %></td>
+    </tr>
+    <tr>
+      <th>Merchant</th>
+      <td><a href="/merchants/<%= merchant.id %>">
+        <span class="hover-underline"><%= merchant.name %></span>
+      </a></td>
+    </tr>
+    <tr>
+      <th>Tag</th>
+      <td><a href="/tags/<%= tag.id %>">
+        <span class="hover-underline"><%= tag.name %></span>
+      </a></td>
+    </tr>
+  </table>
+  <div class="show-buttons">
+    <a href="/transactions/<%= @transaction.id %>/edit">
+      <span class="hover-underline">Edit Transaction</span>
+    </a>
+    <form action="/transactions/<%= @transaction.id %>/delete" method="POST" id="delete-form">
+      <input type="hidden" value="Delete Transaction">
+    </form>
+    <a class="delete-button" href="#" onclick="document.getElementById('delete-form').submit();">
+      Delete Transaction
+    </a>
   </div>
-  <div class="cell cell-50">
-    <span class="field-name">Value:</span>
-    <%= @transaction.print_value %>
-  </div>
-  <div class="cell cell-50">
-    <span class="field-name">Date:</span>
-    <%= @transaction.print_date %>
-  </div>
-  <div class="cell cell-50">
-    <span class="field-name">Time:</span>
-    <%= @transaction.print_time %>
-  </div>
-  <div class="cell cell-50">
-    <span class="field-name">Merchant:</span>
-    <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-  </div>
-  <div class="cell cell-50">
-    <span class="field-name">Tag:</span>
-    <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
-  </div>
-  <a class="cell cell-100" href="/transactions/<%= @transaction.id %>/edit">
-    Edit Transaction
-  </a>
-  <form action="/transactions/<%= @transaction.id %>/delete" method="POST" id="delete-form">
-    <input type="hidden" value="Delete Transaction">
-  </form>
-  <a class="cell cell-100 delete-button" href="#" onclick="document.getElementById('delete-form').submit();">
-    Delete Transaction
-  </a>
 </div>

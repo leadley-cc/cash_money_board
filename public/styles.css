@@ -126,7 +126,7 @@ hr {
 }
 
 .show-details th {
-  width: 50%;
+  width: 40%;
   box-sizing: border-box;
   padding: 10px;
   text-align: right;
@@ -135,7 +135,7 @@ hr {
 }
 
 .show-details td {
-  width: 50%;
+  width: 60%;
   box-sizing: border-box;
   border-left: 1px solid #55557f;
   padding: 10px;
@@ -145,6 +145,13 @@ hr {
 
 .show-details td:hover {
   background-color: #eeeeff;
+}
+
+.show-details td a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: -10px;
 }
 
 .show-buttons {
