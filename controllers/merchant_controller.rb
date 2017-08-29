@@ -20,7 +20,9 @@ get '/merchants/:id/edit/?' do
 end
 
 get '/merchants/:id/?' do
-  redirect to "/merchants/#{params["id"]}/edit"
+  @merchant = Merchant.find(params["id"])
+  erb(:merchant_show)
+  # redirect to "/merchants/#{params["id"]}/edit"
 end
 
 post '/merchants/?' do

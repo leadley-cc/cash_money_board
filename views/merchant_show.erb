@@ -1,0 +1,34 @@
+<h2>Merchant #<%= @merchant.id %></h2>
+<% tag = @merchant.tag %>
+<div class="show">
+  <table class="show-details">
+    <tr>
+      <th>Name</th>
+      <td><%= @merchant.name %></td>
+    </tr>
+    <tr>
+      <th>Tag</th>
+      <td><a href="/tags/<%= tag.id %>"><span class="hover-underline">
+        <%= tag.name %>
+      </span></a></td>
+    </tr>
+    <tr>
+      <th>Transactions</th>
+      <td><%= @merchant.transaction_count %></td>
+    </tr>
+  </table>
+  <div class="show-buttons">
+    <a href="#">
+      <span class="hover-underline">See Transactions</span>
+    </a>
+    <a href="/merchants/<%= @merchant.id %>/edit">
+      <span class="hover-underline">Edit Merchant</span>
+    </a>
+    <form action="/merchants/<%= @merchant.id %>/delete" method="POST" id="delete-form">
+      <input type="hidden" value="Delete Merchant">
+    </form>
+    <a class="delete-button" href="#" onclick="document.getElementById('delete-form').submit();">
+      Delete Merchant
+    </a>
+  </div>
+</div>
