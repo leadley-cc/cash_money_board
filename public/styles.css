@@ -164,48 +164,48 @@ table, tr, th, td {
     font-size: 100%;
 }
 
-.transaction-index {
+.index-table {
   background-color: #e5e5ff;
   border: 2px solid #55557f;
   border-radius: 3px;
   width: 100%;
 }
 
-.transaction-index thead th {
+.index-table thead th {
   background-color: #eeeeff;
   border-bottom: 2px solid #55557f;
 }
 
-.transaction-index thead th:first-child {
+.index-table thead th:first-child {
   border-radius: 3px 0px 0px 0px;
 }
 
-.transaction-index thead th:last-child {
+.index-table thead th:last-child {
   border-radius: 0px 3px 0px 0px;
 }
 
-.transaction-index tbody tr {
+.index-table tbody tr {
   transition: all .15s ease-in;
 }
 
-.transaction-index tbody tr:last-child {
+.index-table tbody tr:last-child {
   border-radius: 0px 0px 3px 3px;
 }
 
-.transaction-index tbody tr:nth-child(even) {
+.index-table tbody tr:nth-child(even) {
   background-color: #ddddff;
 }
 
-.transaction-index tbody tr:hover {
+.index-table tbody tr:hover {
   background-color: #eeeeff;
 }
 
-.transaction-index tbody td, .transaction-index th {
+.index-table tbody td, .index-table th {
   padding: 10px;
   text-align: center;
 }
 
-.transaction-index tbody a {
+.index-table tbody a {
   display: inline-block;
   width: 100%;
   padding: 10px;
@@ -214,15 +214,15 @@ table, tr, th, td {
   /*border-bottom: 1px solid transparent;*/
 }
 
-.transaction-index tbody a:hover {
+.index-table tbody a:hover {
   /*border-bottom: 1px solid #55557f;*/
 }
 
-.transaction-index tfoot td {
+.index-table tfoot td {
   border-top: 2px solid #55557f;
 }
 
-.transaction-index tfoot td a {
+.index-table tfoot td a {
   display: block;
   padding: 10px;
   text-align: center;
@@ -230,6 +230,6 @@ table, tr, th, td {
   border-radius: 0px 0px 3px 3px;
 }
 
-.transaction-index tfoot td a:hover {
+.index-table tfoot td a:hover {
   background-color: #eeeeff;
 }
