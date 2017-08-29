@@ -5,3 +5,10 @@
 
   <input type="submit" name="edit" value="Edit Tag">
 </form>
+
+<form action="/tags/<%= @tag.id %>/delete" method="POST" id="delete-form">
+  <input type="hidden" value="Delete Tag">
+</form>
+<a class="delete-button" href="#" onclick="document.getElementById('delete-form').submit();">
+  Delete Tag
+</a>
