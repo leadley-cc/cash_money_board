@@ -4,6 +4,7 @@ require_relative "../models/user"
 
 get '/users' do
   @users = User.all
+  @users.sort_by! {|user| user.id} if @users
   erb(:user_index)
 end
 
@@ -23,7 +24,7 @@ end
 
 post '/users' do
   User.new(params).save
-  redirect to "/users/#{params["id"]}"
+  redirect to "/users"
 end
 
 post '/users/:id' do
