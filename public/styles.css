@@ -80,14 +80,15 @@ hr {
   background-color: #e5e5ff;
   border: 2px solid #55557f;
   border-radius: 3px;
+  width: 480px;
+  margin: auto;
 }
 
 .user-chooser .cell {
-  font-size: 150%;
+  font-size: 140%;
   text-align: center;
-  padding: 20px 0px;
+  padding: 15px 0px;
   transition: all .15s ease-in-out;
-  /*border-bottom: 2px solid #55557f;*/
 }
 
 .user-chooser a:nth-child(even) .cell {
