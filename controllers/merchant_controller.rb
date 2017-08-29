@@ -20,8 +20,7 @@ get '/merchants/:id/edit' do
 end
 
 get '/merchants/:id' do
-  @merchant = Merchant.find(params[:id])
-  erb(:merchant_show)
+  redirect to "/merchants/#{params["id"]}/edit"
 end
 
 post '/merchants' do
@@ -31,7 +30,7 @@ end
 
 post '/merchants/:id' do
   Merchant.new(params).save
-  redirect to "/merchants/#{params["id"]}"
+  redirect to "/merchants"
 end
 
 post '/merchants/:id/delete' do

@@ -4,6 +4,7 @@ require_relative "../models/tag"
 
 get '/tags' do
   @tags = Tag.all
+  @tags.sort_by! {|tag| tag.id} if @tags
   erb(:tag_index)
 end
 
@@ -17,8 +18,7 @@ get '/tags/:id/edit' do
 end
 
 get '/tags/:id' do
-  @tag = Tag.find(params[:id])
-  erb(:tag_show)
+  redirect to "/tags/#{params["id"]}/edit"
 end
 
 post '/tags' do
