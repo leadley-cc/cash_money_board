@@ -10,6 +10,7 @@ end
 
 get '/transactions/user' do
   @users = User.all
+  @users.sort_by! {|user| user.id} if @users
   erb(:transaction_user)
 end
 
