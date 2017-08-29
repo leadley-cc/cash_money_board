@@ -1,0 +1,17 @@
+<h2>Edit Merchant #<%= @merchant.id %></h2>
+<form id="edit-merchant" action="/merchants/<%= @merchant.id %>" method="post">
+  <label for="name">Name:</label>
+  <input value="<%= @merchant.name %>" type="text" id="name" name="name">
+
+  <label for="tag-select">Tag:</label>
+  <select id="tag-select" name="tag_id">
+    <% @tags.each do |tag| %>
+      <option value="<%= tag.id %>"
+        <%= "selected" if @merchant.tag_id == tag.id %> >
+        <%= tag.name %>
+      </option>
+    <% end %>
+  </select>
+
+  <input type="submit" name="edit" value="Edit Merchant">
+</form>

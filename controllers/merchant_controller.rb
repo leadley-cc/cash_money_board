@@ -4,6 +4,7 @@ require_relative "../models/merchant"
 
 get '/merchants' do
   @merchants = Merchant.all
+  @merchants.sort_by! {|merchant| merchant.id} if @merchants
   erb(:merchant_index)
 end
 
