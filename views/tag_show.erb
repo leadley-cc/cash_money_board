@@ -13,12 +13,16 @@
       <th>Transactions</th>
       <td><%= @tag.transaction_count %></td>
     </tr>
+    <tr>
+      <th>Total Spend</th>
+      <td><%= @tag.print_money("spent") %></td>
+    </tr>
   </table>
   <div class="show-buttons">
-    <a href="#">
+    <a href="/merchants?tag=<%= @tag.id %>">
       <span class="hover-underline">See Merchants</span>
     </a>
-    <a href="#">
+    <a href="/transactions?tag=<%= @tag.id %>">
       <span class="hover-underline">See Transactions</span>
     </a>
     <a href="/tags/<%= @tag.id %>/edit">

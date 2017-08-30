@@ -5,8 +5,9 @@
       <th>ID</th>
       <th>Name</th>
       <th>Budget Cap</th>
+      <th>Spent</th>
       <th>Budget Left</th>
-      <th># of Transactions</th>
+      <th>Transactions</th>
       <th>Details</th>
     </tr>
   </thead>
@@ -21,6 +22,9 @@
       </td>
       <td class="cell">
         <%= user.print_money("budget_cap") %>
+      </td>
+      <td class="cell">
+        <%= user.print_money("spent") %>
       </td>
       <td class="cell <%= 'budget-exceeded' if user.budget_left < 0 %>">
         <%= user.print_money("budget_left") %>
@@ -38,7 +42,7 @@
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="6">
+      <td colspan="7">
         <a href="/users/new"><span class="hover-underline">
           New User
         </span></a>

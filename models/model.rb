@@ -63,6 +63,14 @@ module Model
     SqlRunner.run(sql, [@id])
   end
 
+  def print_money(message)
+    str = send(message).to_s
+    while str.length < 3 do
+      str.prepend("0")
+    end
+    return '£' << str.insert(-3,'.')
+  end
+
   private
   def sql_columns_str
     self.class.columns.join(", ")

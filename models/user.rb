@@ -48,10 +48,6 @@ class User
   #               .inject {|sum, transaction| sum + transaction.value}
   # end
 
-  def print_money(message)
-    '£' << send(message).to_s.insert(-3,'.')
-  end
-
   private
   def spend
     # TODO: Implement a @spent variable and method to add to it

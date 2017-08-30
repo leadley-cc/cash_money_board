@@ -4,6 +4,17 @@ require_relative "../models/transaction"
 
 get '/transactions/?' do
   @transactions = Transaction.all
+  @url_params ||= "?"
+  ["user", "tag", "merchant"].each do |column|
+    if params[column] then
+      @for_message ||= " for #{column.capitalize} \##{params[column]}"
+      @url_params << "#{column}=#{params[column]}&"
+      @transactions.select! do |transaction|
+        transaction.send(column).id == params[column].to_i
+      end
+    end
+  end
+  @url_params.chomp
   @transactions.sort_by! {|transaction| transaction.date_time} if @transactions
   erb(:transaction_index)
 end
@@ -17,7 +28,13 @@ end
 get '/transactions/user/:user_id/?' do
   @user = User.find(params[:user_id])
   @transactions = @user.transactions
-  @transactions.sort_by! {|transaction| transaction.date_time} if @transactions
+  @filter_tag = params["tag_id"].to_i if params["tag_id"]
+  if @transactions then
+    if @filter_tag
+      @transactions.select! {|transaction| transaction.tag.id == @filter_tag}
+    end
+    @transactions.sort_by! {|transaction| transaction.date_time}
+  end
   erb(:transaction_index)
 end
 

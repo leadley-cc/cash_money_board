@@ -4,8 +4,11 @@
 }
 
 body {
+  background-image: url('/aes_gradient.png') !important;
   /*background: linear-gradient(pink, blue);*/
-  background: url('/aes_gradient.png') !important;
+  /*background-image: url('/aesthetic.gif'), url('/aes_gradient.png') !important;*/
+  /*background-position: top right, left !important;
+  background-repeat: no-repeat, repeat !important;*/
   color: #ff00ff;
 }
 
@@ -13,11 +16,15 @@ a, #title-link, .aesthetic-link span {
   color: #ff00ff;
 }
 
+#title-link {
+  letter-spacing: .5em;
+}
+
 a:hover span.hover-underline {
   border-bottom: 1px solid #ff00ff;
 }
 
-.delete-button:hover {
+.delete-button:hover, .budget-exceeded:hover {
   color: #ffe5e5;
   background-color: red !important;
 }

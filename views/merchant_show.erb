@@ -16,9 +16,13 @@
       <th>Transactions</th>
       <td><%= @merchant.transaction_count %></td>
     </tr>
+    <tr>
+      <th>Total Spend</th>
+      <td><%= @merchant.print_money("spent") %></td>
+    </tr>
   </table>
   <div class="show-buttons">
-    <a href="#">
+    <a href="/transactions?merchant=<%= @merchant.id %>">
       <span class="hover-underline">See Transactions</span>
     </a>
     <a href="/merchants/<%= @merchant.id %>/edit">

@@ -5,7 +5,8 @@
       <th>ID</th>
       <th>Name</th>
       <th>Tag</th>
-      <th># of Transactions</th>
+      <th>Transactions</th>
+      <th>Total Spend</th>
       <th>Details</th>
     </tr>
   </thead>
@@ -28,6 +29,9 @@
         <%= merchant.transaction_count %>
       </td>
       <td class="cell">
+        <%= merchant.print_money("spent") %>
+      </td>
+      <td class="cell">
         <a href="/merchants/<%= merchant.id %>"><span class="hover-underline">Show</span></a>
       </td>
     </tr>
@@ -35,7 +39,7 @@
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="5">
+      <td colspan="6">
         <a href="/merchants/new"><span class="hover-underline">
           New Merchant
         </span></a>

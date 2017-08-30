@@ -26,4 +26,10 @@ class Merchant
   def transaction_count
     Transaction.count("merchant_id", @id)
   end
+
+  def spent
+    trans = transactions
+    return 0 unless trans
+    trans.inject(0) {|sum, transaction| sum + transaction.value}
+  end
 end

@@ -40,4 +40,10 @@ class Tag
     result = SqlRunner.run(sql, [@id])
     return result.first["count"]
   end
+
+  def spent
+    trans = transactions
+    return 0 unless trans
+    trans.inject(0) {|sum, transaction| sum + transaction.value}
+  end
 end

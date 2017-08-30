@@ -4,6 +4,8 @@ require_relative "../models/merchant"
 
 get '/merchants/?' do
   @merchants = Merchant.all
+  @merchants.select! {|merchant| merchant.tag.id == params["tag"].to_i} if params["tag"]
+  # TODO: add @for_message to this route and view
   @merchants.sort_by! {|merchant| merchant.id} if @merchants
   erb(:merchant_index)
 end
