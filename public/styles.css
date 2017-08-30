@@ -266,3 +266,30 @@ table, tr, th, td {
 .index-table tfoot td a:hover {
   background-color: #eeeeff;
 }
+
+input[type=text], input[type=number], select {
+  padding: 10px;
+  margin: -12px -10px -10px -10px;
+  width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+	background: none;
+	line-height: 1;
+  font-family: "Avenir Next", sans-serif;
+  font-size: 16px;
+  color: #55557f;
+  border: none;
+  -webkit-appearance: none;
+}
+
+input:focus, select:focus {
+	outline:0;
+}
+
+.show-details label {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: -10px;
+}
