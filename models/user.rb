@@ -20,10 +20,6 @@ class User
     @first_name + " " + @last_name
   end
 
-  def budget_cap_present
-    '£' << @budget_cap.to_s.insert(-3,'.')
-  end
-
   def new_transaction(params)
     params["user_id"] = @id
     Transaction.new(params).save
@@ -35,6 +31,25 @@ class User
 
   def transaction_count
     Transaction.count("user_id", @id)
+  end
+
+  def spent
+    trans = transactions
+    return 0 unless trans
+    trans.inject(0) {|sum, transaction| sum + transaction.value}
+  end
+
+  def budget_left
+    @budget_cap - spent
+  end
+
+  # def spent_by_tag(tag_id)
+  #   transactions.select {|transaction| transaction.tag.id == tag_id}
+  #               .inject {|sum, transaction| sum + transaction.value}
+  # end
+
+  def print_money(message)
+    '£' << send(message).to_s.insert(-3,'.')
   end
 
   private

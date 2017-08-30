@@ -155,6 +155,15 @@ hr {
   margin: -10px;
 }
 
+.budget-exceeded {
+  color: red;
+  transition: all .15s ease-in-out;
+}
+
+.budget-exceeded:hover {
+  background-color: #ffe5e5 !important;
+}
+
 .show-buttons {
   width: 330px;
 }
