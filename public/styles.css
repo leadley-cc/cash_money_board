@@ -267,7 +267,7 @@ table, tr, th, td {
   background-color: #eeeeff;
 }
 
-input[type=text], input[type=number], select {
+input[type=text], input[type=number], input[type=datetime-local], select {
   padding: 10px;
   margin: -12px -10px -10px -10px;
   width: 100%;

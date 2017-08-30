@@ -1,30 +1,43 @@
 <h2>Edit Transaction #<%= @transaction.id %></h2>
-<form id="edit-transaction" action="/transactions/<%= @transaction.id %>" method="post">
-  <label for="user-select">User:</label>
-  <select id="user-select" name="user_id">
-    <% @users.each do |user| %>
-      <option value="<%= user.id %>"
-        <%= "selected" if user.id == @transaction.user_id %> >
-        <%= user.full_name %>
-      </option>
-    <% end %>
-  </select>
-
-  <label for="value">Value:</label>
-  <input type="number" value="<%= @transaction.value %>" id="value" name="value">
-
-  <label for="datetime">Date/time:</label>
-  <input type="datetime-local" value="<%= @transaction.html_date_time %>" id="datetime" name="date_time">
-
-  <label for="merchant-select">Merchant:</label>
-  <select id="merchant-select" name="merchant_id">
-    <% @merchants.each do |merchant| %>
-      <option value="<%= merchant.id %>"
-        <%= "selected" if merchant.id == @transaction.merchant_id %> >
-        <%= merchant.name %>
-      </option>
-    <% end %>
-  </select>
-
-  <input type="submit" name="update" value="Update Transaction">
-</form>
+<div class="show">
+  <form id="edit-transaction" action="/transactions/<%= @transaction.id %>" method="post">
+    <table class="show-details">
+      <tr>
+        <th><label for="user-select">User</label></th>
+        <td><select id="user-select" name="user_id">
+          <% @users.each do |user| %>
+            <option value="<%= user.id %>"
+              <%= "selected" if user.id == @transaction.user_id %> >
+              <%= user.full_name %>
+            </option>
+          <% end %>
+        </select></td>
+      </tr>
+      <tr>
+        <th><label for="value">Value</label></th>
+        <td><input type="number" value="<%= @transaction.value %>" id="value" name="value"></td>
+      </tr>
+      <tr>
+        <th><label for="datetime">Date/time</label></th>
+        <td><input type="datetime-local" value="<%= @transaction.html_date_time %>" id="datetime" name="date_time"></td>
+      </tr>
+      <tr>
+        <th><label for="merchant-select">Merchant</label></th>
+        <td><select id="merchant-select" name="merchant_id">
+          <% @merchants.each do |merchant| %>
+            <option value="<%= merchant.id %>"
+              <%= "selected" if merchant.id == @transaction.merchant_id %> >
+              <%= merchant.name %>
+            </option>
+          <% end %>
+        </select></td>
+      </tr>
+      <input type="hidden" name="edit-transaction" value="Edit Transaction">
+    </table>
+  </form>
+  <div class="show-buttons">
+    <a href="#" onclick="document.getElementById('edit-user').submit();">
+      Update Transaction
+    </a>
+  </div>
+</div>
