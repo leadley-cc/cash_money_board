@@ -1,13 +1,25 @@
 <h2>New User</h2>
-<form id="new-user" action="/users" method="post">
-  <label for="first-name">First name:</label>
-  <input type="text" id="first-name" name="first_name">
-
-  <label for="last-name">Last name:</label>
-  <input type="text" id="last-name" name="last_name">
-
-  <label for="budget-cap">Budget cap:</label>
-  <input type="number" id="budget-cap" name="budget_cap">
-
-  <input type="submit" name="add" value="Add User">
-</form>
+<div class="show">
+  <form id="new-user" action="/users" method="post">
+    <table class="show-details">
+      <tr>
+        <th><label for="first-name">First name</label></th>
+        <td><input type="text" id="first-name" name="first_name"></td>
+      </tr>
+      <tr>
+        <th><label for="last-name">Last name</label></th>
+        <td><input type="text" id="last-name" name="last_name"></td>
+      </tr>
+      <tr>
+        <th><label for="budget-cap">Budget Cap</label></th>
+        <td><input type="number" id="budget-cap" name="budget_cap"></td>
+      </tr>
+      <input type="hidden" name="new-user" value="Add User">
+    </table>
+  </form>
+  <div class="show-buttons">
+    <a href="#" onclick="document.getElementById('new-user').submit();">
+      <span class="hover-underline">Add User</span>
+    </a>
+  </div>
+</div>
