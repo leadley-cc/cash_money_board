@@ -322,5 +322,5 @@ footer {
   color: #ff00ff;
   letter-spacing: .5em;
   padding-left: .5em;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid #ff00ff;
 }
