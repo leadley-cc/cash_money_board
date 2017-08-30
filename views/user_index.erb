@@ -22,7 +22,7 @@
       <td class="cell">
         <%= user.print_money("budget_cap") %>
       </td>
-      <td class="cell">
+      <td class="cell <%= 'budget-exceeded' if user.budget_left < 0 %>">
         <%= user.print_money("budget_left") %>
       </td>
       <td class="cell">
