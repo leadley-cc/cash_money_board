@@ -1,0 +1,23 @@
+* {
+  background: none !important;
+  border-color: #ff00ff !important;
+}
+
+body {
+  /*background: linear-gradient(pink, blue);*/
+  background: url('/aes_gradient.png') !important;
+  color: #ff00ff;
+}
+
+a, #title-link, .aesthetic-link span {
+  color: #ff00ff;
+}
+
+a:hover span.hover-underline {
+  border-bottom: 1px solid #ff00ff;
+}
+
+.delete-button:hover {
+  color: #ffe5e5;
+  background-color: red !important;
+}

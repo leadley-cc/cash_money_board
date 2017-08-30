@@ -9,3 +9,8 @@ also_reload "models/*"
 get '/?' do
   erb(:index)
 end
+
+get '/aesthetic/?' do
+  $aesthetic = !$aesthetic
+  redirect request.referrer
+end
