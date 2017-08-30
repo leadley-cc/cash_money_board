@@ -1,28 +1,42 @@
 <h2>New Transaction</h2>
-<form id="new-transaction" action="/transactions" method="post">
-  <label for="user-select">User:</label>
-  <select id="user-select" name="user_id">
-    <% @users.each do |user| %>
-      <option value="<%= user.id %>" <%= "selected" if user.id == @user_id %> >
-        <%= user.full_name %>
-      </option>
-    <% end %>
-  </select>
-
-  <label for="value">Value:</label>
-  <input type="text" id="value" name="value">
-
-  <label for="datetime">Date/time:</label>
-  <input type="datetime-local" id="datetime" name="date_time">
-
-  <label for="merchant-select">Merchant:</label>
-  <select id="merchant-select" name="merchant_id">
-    <% @merchants.each do |merchant| %>
-      <option value="<%= merchant.id %>">
-        <%= merchant.name %>
-      </option>
-    <% end %>
-  </select>
-
-  <input type="submit" name="add" value="Add Transaction">
-</form>
+<div class="show">
+  <form id="new-transaction" action="/transactions" method="post">
+    <table class="show-details">
+      <tr>
+        <th><label for="user-select">User</label></th>
+        <td><select id="user-select" name="user_id">
+          <% @users.each do |user| %>
+            <option value="<%= user.id %>"
+              <%= "selected" if user.id == @user_id %> >
+              <%= user.full_name %>
+            </option>
+          <% end %>
+        </select></td>
+      </tr>
+      <tr>
+        <th><label for="value">Value</label></th>
+        <td><input type="number" name="value"></td>
+      </tr>
+      <tr>
+        <th><label for="datetime">Date/time</label></th>
+        <td><input type="datetime-local" id="datetime" name="date_time"></td>
+      </tr>
+      <tr>
+        <th><label for="merchant-select">Merchant</label></th>
+        <td><select id="merchant-select" name="merchant_id">
+          <% @merchants.each do |merchant| %>
+            <option value="<%= merchant.id %>">
+              <%= merchant.name %>
+            </option>
+          <% end %>
+        </select></td>
+      </tr>
+      <input type="hidden" name="new-transaction" value="Add Transaction">
+    </table>
+  </form>
+  <div class="show-buttons">
+    <a href="#" onclick="document.getElementById('new-transaction').submit();">
+      Add Transaction
+    </a>
+  </div>
+</div>
