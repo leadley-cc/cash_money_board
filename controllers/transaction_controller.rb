@@ -16,7 +16,7 @@ end
 
 get '/transactions/user/:user_id/?' do
   @user = User.find(params[:user_id])
-  @transactions = Transaction.select("user_id", params[:user_id])
+  @transactions = @user.transactions
   @transactions.sort_by! {|transaction| transaction.date_time} if @transactions
   erb(:transaction_index)
 end
