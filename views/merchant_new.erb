@@ -1,16 +1,27 @@
 <h2>New Merchant</h2>
-<form id="new-merchant" action="/merchants" method="post">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name">
-
-  <label for="tag-select">Tag:</label>
-  <select id="tag-select" name="tag_id">
-    <% @tags.each do |tag| %>
-      <option value="<%= tag.id %>">
-        <%= tag.name %>
-      </option>
-    <% end %>
-  </select>
-
-  <input type="submit" name="add" value="Add Merchant">
-</form>
+<div class="show">
+  <form id="new-merchant" action="/merchants" method="post">
+    <table class="show-details">
+      <tr>
+        <th><label for="name">Name</label></th>
+        <td><input type="text" id="name" name="name"></td>
+      </tr>
+      <tr>
+        <th><label for="tag-select">Tag</label></th>
+        <td><select id="tag-select" name="tag_id">
+          <% @tags.each do |tag| %>
+            <option value="<%= tag.id %>">
+              <%= tag.name %>
+            </option>
+          <% end %>
+        </select></td>
+      </tr>
+      <input type="hidden" name="new-merchant" value="Add Merchant">
+    </table>
+  </form>
+  <div class="show-buttons">
+    <a href="#" onclick="document.getElementById('new-merchant').submit();">
+      <span class="hover-underline">Add Merchant</span>
+    </a>
+  </div>
+</div>
