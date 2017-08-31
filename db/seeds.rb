@@ -19,16 +19,16 @@ michael = User.new({
 })
 michael.save
 
-sandra = User.new({
-  "first_name" => "Sandra",
-  "last_name" => "Jabłońska",
+samantha = User.new({
+  "first_name" => "Samantha",
+  "last_name" => "Tress",
   "budget_cap" => 30000
 })
-sandra.save
+samantha.save
 
 jim = User.new({
   "first_name" => "Jimothy",
-  "last_name" => "Bobble",
+  "last_name" => "Bovvel",
   "budget_cap" => 1000
 })
 jim.save
@@ -63,6 +63,9 @@ entertainment.save
 
 transport = Tag.new({"name" => "Transport"})
 transport.save
+
+online = Tag.new({"name" => "Online"})
+online.save
 
 ## MERCHANTS
 
@@ -102,10 +105,16 @@ buses = Merchant.new({
 })
 buses.save
 
+amazon = Merchant.new({
+  "name" => "Amazon",
+  "tag_id" => online.id
+})
+amazon.save
+
 ## TRANSACTIONS
 
 michael.new_transaction({
-  "value" => 2385,
+  "value" => 23850,
   "date_time" => Time.now,
   "merchant_id" => sains.id
 })
@@ -116,7 +125,7 @@ michael.new_transaction({
   "merchant_id" => lidl.id
 })
 
-sandra.new_transaction({
+samantha.new_transaction({
   "value" => 1050,
   "date_time" => Time.now,
   "merchant_id" => lidl.id
@@ -144,6 +153,12 @@ michael.new_transaction({
   "value" => 1120,
   "date_time" => Time.now,
   "merchant_id" => buses.id
+})
+
+gert.new_transaction({
+  "value" => 420,
+  "date_time" => Time.now,
+  "merchant_id" => amazon.id
 })
 
 binding.pry
