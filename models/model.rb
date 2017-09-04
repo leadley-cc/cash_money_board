@@ -1,4 +1,5 @@
 require_relative "../db/sql_runner"
+require_relative "../db/sql_query"
 
 module Model
   # @table and @columns are required for including Model
@@ -20,44 +21,63 @@ module Model
     end
 
     def delete_all
-      SqlRunner.delete_all(self.table)
+      return SqlQuery.new(self.table).delete.run
     end
 
     def all
-      self.map_create(SqlRunner.all(self.table))
+      result = SqlQuery.new(self.table).select.run
+      return self.map_create(result)
     end
 
     def find(id)
-      result = SqlRunner.find(self.table, [id]).to_a
-      return nil if result.empty?
+      result = SqlQuery.new(self.table)
+                       .select
+                       .where( { "id" => id } )
+                       .run
+      return nil if result.to_a.empty?
       return self.new(result.first)
     end
 
     def select(column, value)
-      result = SqlRunner.select(self.table, {column => value}).to_a
-      return nil if result.empty?
-      # This should actually be fine without the line above as long as we check empty? rather than nil? where the result is used.
+      result = SqlQuery.new(self.table)
+                       .select
+                       .where( { column => value } )
+                       .run
       return self.map_create(result)
     end
 
     def count(column = nil, value = nil)
       options = {}
       options[column] = value if column && value
-      return SqlRunner.count(self.table, options).first["count"]
+      return SqlQuery.new(self.table)
+                     .count
+                     .where( options )
+                     .run
+                     .first["count"]
     end
   end
 
   def save
-    result = SqlRunner.save(self)
+    columns = self.class.columns
+    values = values_array(with_id = false)
+    result = SqlQuery.new(self.class.table)
+                     .insert_into(columns, values)
+                     .run
     @id = result[0]["id"]
   end
 
   def update
-    SqlRunner.update(self)
+    columns = self.class.columns
+    SqlQuery.new(self.class.table)
+            .update(columns, values_array)
+            .run
   end
 
   def delete
-    SqlRunner.delete(self)
+    SqlQuery.new(self.class.table)
+            .delete
+            .where({ "id" => @id })
+            .run
   end
 
   def print_money(message)
@@ -69,10 +89,6 @@ module Model
   end
 
   def values_array(with_id = true)
-    # array = []
-    # columns.each do |column|
-    #   array << send(column)
-    # end
     array = self.class.columns.inject([]) do |array, column|
       array << send(column)
     end

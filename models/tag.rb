@@ -18,12 +18,11 @@ class Tag
   end
 
   def transactions
-    sql = "
-      SELECT transactions.* FROM transactions
-      INNER JOIN merchants ON transactions.merchant_id = merchants.id
-      WHERE merchants.tag_id = $1
-    "
-    result = SqlRunner.run(sql, [@id])
+    result = SqlQuery.new("transactions")
+                     .select
+                     .inner_join("merchants", reverse = true)
+                     .where({ "merchants.tag_id" => @id })
+                     .run
     return Transaction.map_create(result)
   end
 
@@ -32,12 +31,11 @@ class Tag
   end
 
   def transaction_count
-    sql = "
-      SELECT COUNT(*) FROM transactions
-      INNER JOIN merchants ON transactions.merchant_id = merchants.id
-      WHERE merchants.tag_id = $1
-    "
-    result = SqlRunner.run(sql, [@id])
+    result = SqlQuery.new("transactions")
+                     .count
+                     .inner_join("merchants", reverse = true)
+                     .where({ "merchants.tag_id" => @id })
+                     .run
     return result.first["count"]
   end
 
