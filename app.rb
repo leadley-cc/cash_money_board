@@ -1,5 +1,5 @@
 require "sinatra"
-require "sinatra/contrib/all"
+require "sinatra/contrib/all" if development?
 require_relative "controllers/user_controller"
 require_relative "controllers/transaction_controller"
 require_relative "controllers/merchant_controller"
