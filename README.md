@@ -1,3 +1,3 @@
 # CashMoneyBoard
 
-Heroku: [http://cashmoneyboard.herokuapp.com/]
+[Heroku](http://cashmoneyboard.herokuapp.com/)
