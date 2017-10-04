@@ -46,12 +46,17 @@ class Transaction
   end
 
   def tag
-    sql = "
-      SELECT tags.* FROM tags
-      INNER JOIN merchants ON tags.id = merchants.tag_id
-      WHERE merchants.id = $1
-    "
-    result = SqlRunner.run(sql, [@merchant_id])
+    # sql = "
+    #   SELECT tags.* FROM tags
+    #   INNER JOIN merchants ON tags.id = merchants.tag_id
+    #   WHERE merchants.id = $1
+    # "
+    # result = SqlRunner.run(sql, [@merchant_id])
+    result = SqlQuery.new("tags")
+                     .select
+                     .inner_join("merchants")
+                     .where({ "merchants.id" => @merchant_id })
+                     .run
     Tag.new(result.first)
   end
 

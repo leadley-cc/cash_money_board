@@ -1,12 +1,10 @@
 require "pg"
 
 class SqlRunner
-  @@dbname = "cash_money_board"
-  @@host = "localhost"
-
   def SqlRunner.run(sql, values = [])
     begin
-      db = PG.connect({ dbname: @@dbname, host: @@host })
+      # db = PG.connect({ dbname: "cash_money_board", host: "localhost" })
+      db = PG.connect(ENV['DATABASE_URL'])
       if values.empty?
         pg_result = db.exec(sql)
       else
